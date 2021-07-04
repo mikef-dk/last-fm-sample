@@ -11,7 +11,8 @@ val viewModelModule = module {
     scope(named<MainFragment>()) {
         viewModel {
             MainViewModel(
-                searchRepository = get()
+                dataManager = get(),
+                albumDao = get()
             )
         }
     }

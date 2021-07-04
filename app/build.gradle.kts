@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlinx-serialization")
     id("androidx.navigation.safeargs.kotlin")
+    kotlin("kapt")
 }
 
 android {
@@ -54,6 +55,11 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
 
+    // Room
+    implementation("androidx.room:room-runtime:2.3.0")
+    implementation("androidx.room:room-ktx:2.3.0")
+    kapt("androidx.room:room-compiler:2.3.0")
+
     // AdapterDelegates
     implementation("com.hannesdorfmann:adapterdelegates4:4.3.0")
     implementation("com.hannesdorfmann:adapterdelegates4-kotlin-dsl:4.3.0")
@@ -69,6 +75,9 @@ dependencies {
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
     implementation("com.squareup.okhttp3:logging-interceptor:4.9.1")
+
+    // Image Loading
+    implementation("io.coil-kt:coil:1.2.2")
 
     // Koin
     implementation("io.insert-koin:koin-core:3.1.2")

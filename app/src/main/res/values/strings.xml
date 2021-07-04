@@ -3,4 +3,16 @@
 
     <!-- Main Fragment -->
     <string name="main_title">Saved albums</string>
+    <string name="main_fab_title">Search</string>
+
+    <!-- Roboto Regular -->
+    <string name="ff_roboto_regular" translatable="false">sans-serif</string>
+    <!-- Roboto Light -->
+    <string name="ff_roboto_light" translatable="false">sans-serif-light</string>
+    <!-- Roboto Condensed -->
+    <string name="ff_roboto_condensed" translatable="false">sans-serif-condensed</string>
+    <!-- Roboto Thin  -->
+    <string name="ff_roboto_thin" translatable="false">sans-serif-thin</string>
+    <!-- Roboto Medium -->
+    <string name="ff_roboto_medium" translatable="false">sans-serif-medium</string>
 </resources>

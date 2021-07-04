@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="LastFm.Album.Shape">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerRadius">4dp</item>
+    </style>
+
+</resources>

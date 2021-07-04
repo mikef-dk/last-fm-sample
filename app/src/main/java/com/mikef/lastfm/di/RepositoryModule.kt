@@ -24,6 +24,7 @@ val repositoryModule = module {
 
     single<AlbumRepository> {
         AlbumRepositoryImpl(
+            albumDao = get(),
             albumService = get()
         )
     }
