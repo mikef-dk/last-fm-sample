@@ -1,0 +1,45 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/build
+*/build/*
+build/
+/captures
+.externalNativeBuild
+.cxx
+
+#built application files
+#*.apk
+#*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+testreports/
+
+# Local configuration file (sdk path, etc)
+local.properties
+# workplace.properties is not supposed to be in the repo
+workplace.properties
+
+# Windows thumbnail db
+Thumbs.db
+# OSX files
+.DS_Store
+
+# Android Studio
+!.idea/
+.idea/*
+!.idea/codeStyles

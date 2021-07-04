@@ -1,0 +1,21 @@
+package com.mikef.lastfm.network.artist
+
+
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Artist(
+    @SerialName("name")
+    val name: String,
+    @SerialName("listeners")
+    val listeners: String,
+    @SerialName("mbid")
+    val mbid: String,
+    @SerialName("url")
+    val url: String,
+    @SerialName("streamable")
+    val streamable: String,
+    @SerialName("image")
+    val image: List<Image>
+)
