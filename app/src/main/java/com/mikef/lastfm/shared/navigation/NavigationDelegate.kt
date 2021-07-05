@@ -4,5 +4,9 @@ interface NavigationDelegate {
 
     fun initialize()
 
+    fun navigateToSearch()
+
+    fun navigateToArtistInfo(artistName: String)
+
 
 }

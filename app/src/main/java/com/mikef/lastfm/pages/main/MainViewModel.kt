@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.mikef.lastfm.database.dao.AlbumDao
 import com.mikef.lastfm.pages.main.adapter.MainDataManager
 import com.mikef.lastfm.shared.adapter.AdapterData
+import com.mikef.lastfm.shared.navigation.NavigationDelegate
 import kotlinx.coroutines.launch
 
 class MainViewModel(
@@ -31,6 +32,10 @@ class MainViewModel(
 
     fun onAlbumClicked(artist: String, album: String) {
 
+    }
+
+    fun onSearchClicked(navigationDelegate: NavigationDelegate){
+        navigationDelegate.navigateToSearch()
     }
 
 }

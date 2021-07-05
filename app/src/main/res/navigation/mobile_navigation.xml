@@ -11,6 +11,35 @@
         android:label="@string/main_title"
         tools:layout="@layout/fragment_main">
 
+        <action
+            android:id="@+id/action_navigation_overview_to_search"
+            app:destination="@id/search_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/search_fragment"
+        android:name="com.mikef.lastfm.pages.search.SearchFragment"
+        android:label="@string/search_title"
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_navigation_search_to_artist_info"
+            app:destination="@id/search_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/artist_info_fragment"
+        android:name="com.mikef.lastfm.pages.artist.ArtistInfoFragment"
+        android:label="@string/artist_info_title"
+        tools:layout="@layout/fragment_artist_info">
+
+        <argument
+            android:name="artistName"
+            app:argType="string"
+            app:nullable="false" />
+
     </fragment>
 
 </navigation>

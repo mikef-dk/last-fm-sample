@@ -3,6 +3,7 @@ package com.mikef.lastfm.shared.navigation
 import android.app.Activity
 import androidx.navigation.findNavController
 import com.mikef.lastfm.R
+import com.mikef.lastfm.pages.artist.ArtistInfoFragmentArgs
 
 class NavigationDelegateImpl(activity: Activity) : NavigationDelegate {
 
@@ -11,6 +12,19 @@ class NavigationDelegateImpl(activity: Activity) : NavigationDelegate {
     override fun initialize() {
         val graph = navController.navInflater.inflate(R.navigation.mobile_navigation)
         navController.graph = graph
+    }
+
+    override fun navigateToSearch() {
+        navController.navigate(R.id.action_navigation_overview_to_search)
+    }
+
+    override fun navigateToArtistInfo(artistName: String) {
+        navController.navigate(
+            R.id.action_navigation_search_to_artist_info,
+            ArtistInfoFragmentArgs(
+                artistName = artistName
+            ).toBundle()
+        )
     }
 
 }

@@ -10,7 +10,7 @@
         android:id="@+id/album_cover"
         android:layout_width="96dp"
         android:layout_height="96dp"
-        android:src="@drawable/belive_album"
+        android:src="@drawable/believe_album"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

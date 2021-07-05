@@ -5,6 +5,14 @@
     <string name="main_title">Saved albums</string>
     <string name="main_fab_title">Search</string>
 
+    <!-- Search Fragment -->
+    <string name="search_title">Artist search</string>
+    <string name="search_input_hint">Artist name</string>
+    <string name="search_no_result">No artist found with the name %s</string>
+
+    <!-- Artist Info Fragment -->
+    <string name="artist_info_title">Artist info</string>
+
     <!-- Roboto Regular -->
     <string name="ff_roboto_regular" translatable="false">sans-serif</string>
     <!-- Roboto Light -->
