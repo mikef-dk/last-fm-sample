@@ -1,6 +1,6 @@
 package com.mikef.lastfm.pages.main.adapter
 
-import com.mikef.lastfm.network.album.Album
+import com.mikef.lastfm.network.data.album.Album
 import com.mikef.lastfm.pages.main.adapter.delegates.AlbumCollectionDelegate
 import com.mikef.lastfm.pages.main.adapter.delegates.TitleDelegate
 import com.mikef.lastfm.shared.adapter.AdapterData

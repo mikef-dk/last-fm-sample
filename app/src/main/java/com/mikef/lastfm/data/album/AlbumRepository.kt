@@ -1,6 +1,6 @@
 package com.mikef.lastfm.data.album
 
-import com.mikef.lastfm.network.album.Album
+import com.mikef.lastfm.network.data.album.Album
 
 interface AlbumRepository {
 

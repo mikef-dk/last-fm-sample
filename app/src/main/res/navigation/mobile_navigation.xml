@@ -5,6 +5,10 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/main_fragment">
 
+    <action
+        android:id="@+id/action_navigation_to_album_info"
+        app:destination="@id/album_info_fragment" />
+
     <fragment
         android:id="@+id/main_fragment"
         android:name="com.mikef.lastfm.pages.main.MainFragment"
@@ -25,7 +29,7 @@
 
         <action
             android:id="@+id/action_navigation_search_to_artist_info"
-            app:destination="@id/search_fragment" />
+            app:destination="@id/artist_info_fragment" />
 
     </fragment>
 
@@ -37,6 +41,24 @@
 
         <argument
             android:name="artistName"
+            app:argType="string"
+            app:nullable="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/album_info_fragment"
+        android:name="com.mikef.lastfm.pages.album.AlbumInfoFragment"
+        android:label="@string/album_info_title"
+        tools:layout="@layout/fragment_album_info">
+
+        <argument
+            android:name="artistName"
+            app:argType="string"
+            app:nullable="false" />
+
+        <argument
+            android:name="albumName"
             app:argType="string"
             app:nullable="false" />
 

@@ -34,13 +34,16 @@ val viewModelModule = module {
 
     scope(named<ArtistInfoFragment>()) {
         viewModel {
-            ArtistInfoViewModel()
+            ArtistInfoViewModel(
+                artistRepository = get(),
+                dataManager = get()
+            )
         }
     }
 
     scope(named<AlbumInfoFragment>()) {
         viewModel {
-            AlbumInfoViewModel()
+            AlbumInfoViewModel(albumRepository = get())
         }
     }
 

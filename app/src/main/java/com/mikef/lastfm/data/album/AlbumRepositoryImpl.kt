@@ -2,7 +2,7 @@ package com.mikef.lastfm.data.album
 
 import com.mikef.lastfm.database.dao.AlbumDao
 import com.mikef.lastfm.database.entity.AlbumEntity
-import com.mikef.lastfm.network.album.Album
+import com.mikef.lastfm.network.data.album.Album
 
 class AlbumRepositoryImpl(
     private val albumDao: AlbumDao,

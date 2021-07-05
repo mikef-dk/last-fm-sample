@@ -1,7 +1,7 @@
 package com.mikef.lastfm.database.converter
 
 import androidx.room.TypeConverter
-import com.mikef.lastfm.network.album.Album
+import com.mikef.lastfm.network.data.album.Album
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json

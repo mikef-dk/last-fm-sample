@@ -1,7 +1,7 @@
 package com.mikef.lastfm.data.artist
 
-import com.mikef.lastfm.network.artistAlbum.TopAlbumResponse
-import com.mikef.lastfm.network.artistInfo.ArtistInfoResponse
+import com.mikef.lastfm.network.data.artistAlbum.TopAlbumResponse
+import com.mikef.lastfm.network.data.artistInfo.ArtistInfoResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

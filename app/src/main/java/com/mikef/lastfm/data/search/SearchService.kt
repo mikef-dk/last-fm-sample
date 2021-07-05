@@ -1,6 +1,6 @@
 package com.mikef.lastfm.data.search
 
-import com.mikef.lastfm.network.artist.ArtistSearchResult
+import com.mikef.lastfm.network.data.artist.ArtistSearchResult
 import retrofit2.http.GET
 import retrofit2.http.Query
 

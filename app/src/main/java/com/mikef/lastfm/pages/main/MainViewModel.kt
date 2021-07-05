@@ -30,11 +30,15 @@ class MainViewModel(
         }
     }
 
-    fun onAlbumClicked(artist: String, album: String) {
-
+    fun onAlbumClicked(
+        navigationDelegate: NavigationDelegate,
+        artistName: String,
+        albumName: String
+    ) {
+        navigationDelegate.navigateToAlbumInfo(artistName, albumName)
     }
 
-    fun onSearchClicked(navigationDelegate: NavigationDelegate){
+    fun onSearchClicked(navigationDelegate: NavigationDelegate) {
         navigationDelegate.navigateToSearch()
     }
 

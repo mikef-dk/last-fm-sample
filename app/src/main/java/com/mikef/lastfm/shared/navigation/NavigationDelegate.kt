@@ -8,5 +8,7 @@ interface NavigationDelegate {
 
     fun navigateToArtistInfo(artistName: String)
 
+    fun navigateToAlbumInfo(artistName: String, albumName: String)
+
 
 }

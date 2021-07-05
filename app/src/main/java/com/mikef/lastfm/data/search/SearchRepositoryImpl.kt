@@ -1,7 +1,7 @@
 package com.mikef.lastfm.data.search
 
 import com.mikef.lastfm.network.ApiResult
-import com.mikef.lastfm.network.artist.ArtistSearchResult
+import com.mikef.lastfm.network.data.artist.ArtistSearchResult
 
 class SearchRepositoryImpl(
     private val searchService: SearchService

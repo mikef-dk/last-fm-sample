@@ -50,8 +50,8 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(
     // AlbumDelegate.Listener
     ///////////////////////////////////////////////////////////////////////////
 
-    override fun onAlbumClicked(artist: String, album: String) {
-        viewModel.onAlbumClicked(artist, album)
+    override fun onAlbumClicked(artistName: String, albumName: String) {
+        viewModel.onAlbumClicked(navigationDelegate, artistName, albumName)
     }
 
 }

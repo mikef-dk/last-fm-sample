@@ -12,6 +12,10 @@
 
     <!-- Artist Info Fragment -->
     <string name="artist_info_title">Artist info</string>
+    <string name="artist_info_album_playcount_formatter">Playcount: %d</string>
+
+    <!-- Album Info Fragment -->
+    <string name="album_info_title">Album info</string>
 
     <!-- Roboto Regular -->
     <string name="ff_roboto_regular" translatable="false">sans-serif</string>

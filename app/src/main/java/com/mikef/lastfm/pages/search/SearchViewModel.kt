@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mikef.lastfm.data.search.SearchRepository
 import com.mikef.lastfm.network.ApiResult
-import com.mikef.lastfm.network.artist.ArtistSearchResult
+import com.mikef.lastfm.network.data.artist.ArtistSearchResult
 import com.mikef.lastfm.shared.ConflatedJob
 import com.mikef.lastfm.shared.adapter.AdapterData
 import com.mikef.lastfm.shared.navigation.NavigationDelegate

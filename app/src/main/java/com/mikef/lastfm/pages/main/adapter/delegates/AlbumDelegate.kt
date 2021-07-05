@@ -9,7 +9,7 @@ object AlbumDelegate {
 
     interface Listener {
 
-        fun onAlbumClicked(artist: String, album: String)
+        fun onAlbumClicked(artistName: String, albumName: String)
 
     }
 
@@ -21,7 +21,7 @@ object AlbumDelegate {
         ) {
 
             itemView.setOnClickListener {
-                listener.onAlbumClicked(artist = item.artist, album = item.albumName)
+                listener.onAlbumClicked(artistName = item.artist, albumName = item.albumName)
             }
 
             bind {

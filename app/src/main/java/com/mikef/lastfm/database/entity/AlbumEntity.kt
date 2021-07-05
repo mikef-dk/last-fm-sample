@@ -2,7 +2,7 @@ package com.mikef.lastfm.database.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
-import com.mikef.lastfm.network.album.Album
+import com.mikef.lastfm.network.data.album.Album
 
 @Entity(primaryKeys = ["artist_name", "album_name"], tableName = "album_table")
 class AlbumEntity(

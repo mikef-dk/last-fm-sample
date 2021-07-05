@@ -3,6 +3,7 @@ package com.mikef.lastfm.shared.navigation
 import android.app.Activity
 import androidx.navigation.findNavController
 import com.mikef.lastfm.R
+import com.mikef.lastfm.pages.album.AlbumInfoFragmentArgs
 import com.mikef.lastfm.pages.artist.ArtistInfoFragmentArgs
 
 class NavigationDelegateImpl(activity: Activity) : NavigationDelegate {
@@ -23,6 +24,16 @@ class NavigationDelegateImpl(activity: Activity) : NavigationDelegate {
             R.id.action_navigation_search_to_artist_info,
             ArtistInfoFragmentArgs(
                 artistName = artistName
+            ).toBundle()
+        )
+    }
+
+    override fun navigateToAlbumInfo(artistName: String, albumName: String) {
+        navController.navigate(
+            R.id.action_navigation_to_album_info,
+            AlbumInfoFragmentArgs(
+                artistName = artistName,
+                albumName = albumName
             ).toBundle()
         )
     }
