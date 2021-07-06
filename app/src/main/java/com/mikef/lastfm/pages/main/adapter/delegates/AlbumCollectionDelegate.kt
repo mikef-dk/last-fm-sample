@@ -25,6 +25,10 @@ object AlbumCollectionDelegate {
 
     data class AlbumCollectionData(
         val albums: List<AdapterData<*>>
-    ) : AdapterData<AlbumCollectionData>
+    ) : AdapterData<AlbumCollectionData> {
+
+        override fun isItemTheSame(data: AlbumCollectionData) = albums.size == data.albums.size
+
+    }
 
 }

@@ -7,10 +7,10 @@ import com.mikef.lastfm.shared.adapter.AdapterData
 
 class MainDataManager(private val albumCollectionDataManager: AlbumCollectionDataManager) {
 
-    fun buildList(albums: List<Album>): List<AdapterData<*>> {
+    fun buildList(albums: List<Album>?): List<AdapterData<*>> {
         return mutableListOf<AdapterData<*>>().apply {
-            val groupedList = albums.groupBy { it.artist }
-            groupedList.forEach { (artist, albums) ->
+            val groupedList = albums?.groupBy { it.artist }
+            groupedList?.forEach { (artist, albums) ->
                 add(TitleDelegate.MainTitleData(title = artist))
                 add(
                     AlbumCollectionDelegate.AlbumCollectionData(

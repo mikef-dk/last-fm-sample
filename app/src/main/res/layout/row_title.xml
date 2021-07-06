@@ -8,5 +8,8 @@
     android:maxLines="1"
     android:minHeight="48dp"
     android:padding="16dp"
+    android:textStyle="bold"
+    android:fontFamily="@string/ff_roboto_medium"
+    android:textSize="20sp"
     android:textColor="@color/text_color_title"
     tools:text="Cher" />

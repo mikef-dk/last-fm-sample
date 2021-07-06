@@ -7,19 +7,17 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Album(
     @SerialName("listeners")
-    val listeners: String,
+    val listeners: String? = null,
     @SerialName("playcount")
     val playcount: String,
     @SerialName("wiki")
-    val wiki: Wiki,
+    val wiki: Wiki? = null,
     @SerialName("tracks")
-    val tracks: Tracks,
+    val tracks: Tracks? = null,
     @SerialName("image")
     val image: List<Image>,
-    @SerialName("tags")
-    val tags: Tags,
     @SerialName("url")
-    val url: String,
+    val url: String? = null,
     @SerialName("artist")
     val artist: String,
     @SerialName("name")

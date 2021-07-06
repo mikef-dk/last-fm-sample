@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mikef.lastfm.data.search.SearchRepository
-import com.mikef.lastfm.network.ApiResult
+import com.mikef.lastfm.data.RepoResult
 import com.mikef.lastfm.network.data.artist.ArtistSearchResult
 import com.mikef.lastfm.shared.ConflatedJob
 import com.mikef.lastfm.shared.adapter.AdapterData
@@ -38,15 +38,15 @@ class SearchViewModel(
     // Private methods
     ///////////////////////////////////////////////////////////////////////////
 
-    private fun handleSearchResult(result: ApiResult<ArtistSearchResult>) {
+    private fun handleSearchResult(result: RepoResult<ArtistSearchResult>) {
         when (result) {
-            is ApiResult.Success -> {
+            is RepoResult.Success -> {
                 mutableListData.value = dataManager.buildList(
                     result.value.results.attr.forX,
                     result.value.results.artistMatches.artist
                 )
             }
-            is ApiResult.Failure -> {
+            is RepoResult.Failure -> {
                 // TODO: Proper error handling
             }
         }

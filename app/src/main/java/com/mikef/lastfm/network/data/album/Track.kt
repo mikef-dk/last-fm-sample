@@ -17,5 +17,16 @@ data class Track(
     @SerialName("name")
     val name: String,
     @SerialName("streamable")
-    val streamable: Streamable
-)
+    val streamable: Streamable? = null
+) {
+
+    fun getDurationInMinutes(): String {
+        val minutes = duration / 60
+        val seconds = duration % 60
+        // TODO: Proper format
+        return "$minutes:$seconds"
+//        return String.format("%02d:%02d", minutes, seconds)
+//        return "%d:%02d".format(minutes, seconds)
+    }
+
+}

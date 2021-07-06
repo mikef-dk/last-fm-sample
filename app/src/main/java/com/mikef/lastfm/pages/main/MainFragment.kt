@@ -6,6 +6,7 @@ import com.mikef.lastfm.databinding.FragmentMainBinding
 import com.mikef.lastfm.pages.main.adapter.MainAdapter
 import com.mikef.lastfm.pages.main.adapter.delegates.AlbumDelegate
 import com.mikef.lastfm.shared.BaseFragment
+import com.mikef.lastfm.shared.disableChangeAnimation
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(
@@ -32,6 +33,8 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(
     private fun initView() {
         binding.apply {
             recyclerView.adapter = adapter
+            recyclerView.disableChangeAnimation()
+
             extendedFab.setOnClickListener {
                 viewModel.onSearchClicked(navigationDelegate)
             }

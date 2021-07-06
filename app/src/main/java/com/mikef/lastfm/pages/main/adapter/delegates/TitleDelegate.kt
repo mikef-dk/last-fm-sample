@@ -18,6 +18,10 @@ object TitleDelegate {
 
     }
 
-    data class MainTitleData(val title: String) : AdapterData<MainTitleData>
+    data class MainTitleData(val title: String) : AdapterData<MainTitleData>{
+
+        override fun isItemTheSame(data: MainTitleData) = title == data.title
+
+    }
 
 }

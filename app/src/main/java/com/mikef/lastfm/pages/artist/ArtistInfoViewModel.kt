@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mikef.lastfm.data.artist.ArtistRepository
-import com.mikef.lastfm.network.ApiResult
+import com.mikef.lastfm.data.RepoResult
 import com.mikef.lastfm.network.data.artistAlbum.TopAlbumResponse
 import com.mikef.lastfm.network.data.artistInfo.ArtistInfoResponse
 import com.mikef.lastfm.shared.adapter.AdapterData
@@ -39,9 +39,9 @@ class ArtistInfoViewModel(
     // Private methods
     ///////////////////////////////////////////////////////////////////////////
 
-    private fun handleResult(result: ApiResult<Pair<ArtistInfoResponse, TopAlbumResponse>>) {
+    private fun handleResult(result: RepoResult<Pair<ArtistInfoResponse, TopAlbumResponse>>) {
         when (result) {
-            is ApiResult.Success -> {
+            is RepoResult.Success -> {
                 val (artistResponse, topAlbums) = result.value
                 mutableViewState.value =
                     ViewState(
@@ -50,7 +50,7 @@ class ArtistInfoViewModel(
                         dataManager.buildList(topAlbums.topAlbums.artistAlbum)
                     )
             }
-            is ApiResult.Failure -> {
+            is RepoResult.Failure -> {
                 // TODO
             }
         }

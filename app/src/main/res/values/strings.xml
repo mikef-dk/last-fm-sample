@@ -12,10 +12,14 @@
 
     <!-- Artist Info Fragment -->
     <string name="artist_info_title">Artist info</string>
-    <string name="artist_info_album_playcount_formatter">Playcount: %d</string>
+    <string name="artist_info_album_play_count_formatter">Playcount: %d</string>
+    <string name="artist_info_top_albums_title">Top-Albums</string>
 
     <!-- Album Info Fragment -->
     <string name="album_info_title">Album info</string>
+    <string name="album_info_artist_formatter">by %s</string>
+    <string name="album_info_save">Save</string>
+    <string name="album_info_delete">Delete</string>
 
     <!-- Roboto Regular -->
     <string name="ff_roboto_regular" translatable="false">sans-serif</string>

@@ -1,10 +1,12 @@
 package com.mikef.lastfm.pages.artist.adapter.delegates
 
 import coil.load
+import coil.transform.RoundedCornersTransformation
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.mikef.lastfm.R
 import com.mikef.lastfm.databinding.RowArtistAlbumBinding
 import com.mikef.lastfm.shared.adapter.AdapterData
+import com.mikef.lastfm.shared.dp
 
 object ArtistAlbumDelegate {
 
@@ -22,17 +24,18 @@ object ArtistAlbumDelegate {
         ) {
 
             itemView.setOnClickListener {
-                listener.onAlbumClicked("")
+                listener.onAlbumClicked(item.albumName)
             }
 
             bind {
                 binding.apply {
                     albumCover.load(item.imageUrl) {
                         crossfade(true)
+                        transformations(RoundedCornersTransformation(4.dp))
                     }
                     albumName.text = item.albumName
-                    albumYear.text =
-                        getString(R.string.artist_info_album_playcount_formatter, item.playCount)
+                    albumPlayCount.text =
+                        getString(R.string.artist_info_album_play_count_formatter, item.playCount)
                 }
             }
 
@@ -42,6 +45,10 @@ object ArtistAlbumDelegate {
         val imageUrl: String,
         val albumName: String,
         val playCount: Int,
-    ) : AdapterData<ArtistAlbumData>
+    ) : AdapterData<ArtistAlbumData> {
+
+        override fun isItemTheSame(data: ArtistAlbumData) = albumName == albumName
+
+    }
 
 }

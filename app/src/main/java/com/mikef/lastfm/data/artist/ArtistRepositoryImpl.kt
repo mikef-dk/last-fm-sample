@@ -1,6 +1,6 @@
 package com.mikef.lastfm.data.artist
 
-import com.mikef.lastfm.network.ApiResult
+import com.mikef.lastfm.data.RepoResult
 import com.mikef.lastfm.network.data.artistAlbum.TopAlbumResponse
 import com.mikef.lastfm.network.data.artistInfo.ArtistInfoResponse
 import kotlinx.coroutines.Dispatchers
@@ -17,7 +17,7 @@ class ArtistRepositoryImpl(private val artistService: ArtistService) : ArtistRep
         return artistService.fetchTopAlbums(artistName)
     }
 
-    override suspend fun fetchArtistData(artistName: String): ApiResult<Pair<ArtistInfoResponse, TopAlbumResponse>> {
+    override suspend fun fetchArtistData(artistName: String): RepoResult<Pair<ArtistInfoResponse, TopAlbumResponse>> {
         return withContext(Dispatchers.IO) {
             try {
                 val infoDeferred =
@@ -28,9 +28,9 @@ class ArtistRepositoryImpl(private val artistService: ArtistService) : ArtistRep
                 val artistInfo = infoDeferred.await()
                 val topAlbums = topAlbumsDeferred.await()
 
-                ApiResult.Success(Pair(artistInfo, topAlbums))
+                RepoResult.Success(Pair(artistInfo, topAlbums))
             } catch (e: Exception) {
-                ApiResult.Failure(e)
+                RepoResult.Failure(e)
             }
         }
     }

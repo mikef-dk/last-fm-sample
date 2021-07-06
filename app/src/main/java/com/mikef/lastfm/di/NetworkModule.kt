@@ -11,6 +11,7 @@ import kotlinx.serialization.json.Json
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
 
@@ -36,12 +37,16 @@ val networkModule = module {
         }.build()
     }
 
+    single(named("jsonConfig")) {
+        Json { ignoreUnknownKeys = true }
+    }
+
     single {
         val contentType = "application/json".toMediaType()
         Retrofit.Builder()
             .client(get())
             .baseUrl(ApiConfig.BASE_URL)
-            .addConverterFactory(Json.asConverterFactory(contentType))
+            .addConverterFactory(get<Json>(named("jsonConfig")).asConverterFactory(contentType))
             .build()
     }
 

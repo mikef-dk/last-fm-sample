@@ -43,7 +43,10 @@ val viewModelModule = module {
 
     scope(named<AlbumInfoFragment>()) {
         viewModel {
-            AlbumInfoViewModel(albumRepository = get())
+            AlbumInfoViewModel(
+                albumRepository = get(),
+                dataManager = get()
+            )
         }
     }
 

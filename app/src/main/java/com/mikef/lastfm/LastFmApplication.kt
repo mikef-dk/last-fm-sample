@@ -34,11 +34,12 @@ class LastFmApplication : Application() {
             modules(
                 listOf(
                     baseModule,
-                    viewModelModule,
                     daoModule,
+                    dataManagerModule,
                     navigationModule,
                     networkModule,
-                    repositoryModule
+                    repositoryModule,
+                    viewModelModule,
                 )
             )
         }

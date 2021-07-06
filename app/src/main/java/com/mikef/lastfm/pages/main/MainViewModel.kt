@@ -23,7 +23,7 @@ class MainViewModel(
         viewModelScope.launch {
             val albums = albumDao.getAlbums()
             if (albums.isEmpty()) {
-                // Show empty view
+                mutableListData.value = dataManager.buildList(null)
             } else {
                 mutableListData.value = dataManager.buildList(albums.map { it.album })
             }

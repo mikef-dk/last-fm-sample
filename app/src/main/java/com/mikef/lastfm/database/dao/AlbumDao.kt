@@ -18,7 +18,6 @@ interface AlbumDao {
     suspend fun insert(album: AlbumEntity)
 
     @Query("DELETE FROM album_table WHERE artist_name = :artistName AND album_name = :albumName")
-    suspend fun delete(artistName: String, albumName: String)
-
+    suspend fun delete(artistName: String, albumName: String) : Int
 
 }
