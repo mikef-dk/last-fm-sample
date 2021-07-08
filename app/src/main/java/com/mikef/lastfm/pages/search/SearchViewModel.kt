@@ -20,6 +20,12 @@ class SearchViewModel(
     private var searchJob = ConflatedJob()
 
     fun onSearchQueryChanged(query: String) {
+        if (query.isEmpty()) {
+            searchJob.cancel()
+            mutableViewState.value = dataManager.buildList()
+            return
+        }
+
         searchJob += viewModelScope.launch {
             val result = searchRepository.searchArtist(query)
             handleSearchResult(result)

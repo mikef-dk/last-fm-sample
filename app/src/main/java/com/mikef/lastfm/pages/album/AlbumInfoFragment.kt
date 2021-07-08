@@ -2,13 +2,13 @@ package com.mikef.lastfm.pages.album
 
 import android.os.Bundle
 import android.view.View
-import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.mikef.lastfm.R
 import com.mikef.lastfm.databinding.FragmentAlbumInfoBinding
 import com.mikef.lastfm.pages.album.adapter.AlbumInfoAdapter
 import com.mikef.lastfm.shared.BaseFragment
 import com.mikef.lastfm.shared.dp
+import com.mikef.lastfm.shared.loadImage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AlbumInfoFragment : BaseFragment<FragmentAlbumInfoBinding, AlbumInfoViewModel>(
@@ -50,7 +50,8 @@ class AlbumInfoFragment : BaseFragment<FragmentAlbumInfoBinding, AlbumInfoViewMo
             binding.apply {
                 albumName.text = it.albumName
                 artistName.text = getString(R.string.album_info_artist_formatter, it.artistName)
-                albumImage.load(it.albumCoverUrl) {
+                albumImage.loadImage(it.albumCoverUrl) {
+                    placeholder(R.drawable.placeholder)
                     crossfade(true)
                     transformations(
                         RoundedCornersTransformation(4.dp)

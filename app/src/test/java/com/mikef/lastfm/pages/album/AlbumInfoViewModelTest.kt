@@ -2,7 +2,7 @@ package com.mikef.lastfm.pages.album
 
 import com.google.common.truth.Truth.assertThat
 import com.mikef.lastfm.extensions.InstantExecutorExtension
-import com.mikef.lastfm.getValueForTest
+import com.mikef.lastfm.extensions.getValueForTest
 import com.mikef.lastfm.pages.album.adapter.AlbumInfoDataManager
 import com.mikef.lastfm.repository.album.AlbumRepository
 import com.mikef.lastfm.shared.navigation.NavigationDelegate
@@ -11,6 +11,7 @@ import io.mockk.coVerify
 import io.mockk.mockk
 import io.mockk.verify
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.setMain
 import org.junit.jupiter.api.BeforeEach
@@ -20,15 +21,16 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 
+@ExperimentalCoroutinesApi
 @ExtendWith(InstantExecutorExtension::class)
 class AlbumInfoViewModelTest {
 
     private val dispatcher = TestCoroutineDispatcher()
 
     private val albumRepository = mockk<AlbumRepository>(relaxed = true)
-    private val dataManager = AlbumInfoDataManager()
     private val navigationDelegate = mockk<NavigationDelegate>(relaxed = true)
 
+    private val dataManager = AlbumInfoDataManager()
     private val viewModel = AlbumInfoViewModel(albumRepository, dataManager)
 
     @BeforeEach

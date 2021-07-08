@@ -12,7 +12,7 @@
         android:id="@+id/artist_image"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        tools:src="@drawable/believe_album" />
+        android:src="@drawable/placeholder" />
 
     <TextView
         android:id="@+id/artist_name"

@@ -1,12 +1,12 @@
 package com.mikef.lastfm.pages.artist.adapter.delegates
 
-import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.mikef.lastfm.R
 import com.mikef.lastfm.databinding.RowArtistAlbumBinding
 import com.mikef.lastfm.shared.adapter.AdapterData
 import com.mikef.lastfm.shared.dp
+import com.mikef.lastfm.shared.loadImage
 
 object ArtistAlbumDelegate {
 
@@ -29,7 +29,8 @@ object ArtistAlbumDelegate {
 
             bind {
                 binding.apply {
-                    albumCover.load(item.imageUrl) {
+                    albumCover.loadImage(item.imageUrl) {
+                        placeholder(R.drawable.placeholder)
                         crossfade(true)
                         transformations(RoundedCornersTransformation(4.dp))
                     }

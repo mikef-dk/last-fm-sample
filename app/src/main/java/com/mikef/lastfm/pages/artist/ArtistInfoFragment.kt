@@ -2,11 +2,12 @@ package com.mikef.lastfm.pages.artist
 
 import android.os.Bundle
 import android.view.View
-import coil.load
+import com.mikef.lastfm.R
 import com.mikef.lastfm.databinding.FragmentArtistInfoBinding
 import com.mikef.lastfm.pages.artist.adapter.ArtistInfoAdapter
 import com.mikef.lastfm.pages.artist.adapter.delegates.ArtistAlbumDelegate
 import com.mikef.lastfm.shared.BaseFragment
+import com.mikef.lastfm.shared.loadImage
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ArtistInfoFragment : BaseFragment<FragmentArtistInfoBinding, ArtistInfoViewModel>(
@@ -41,7 +42,8 @@ class ArtistInfoFragment : BaseFragment<FragmentArtistInfoBinding, ArtistInfoVie
             binding.apply {
                 artistName.text = it.artistName
                 title.text = it.artistName
-                artistImage.load(it.artistUrl) {
+                artistImage.loadImage(it.artistUrl) {
+                    placeholder(R.drawable.placeholder)
                     crossfade(true)
                 }
             }

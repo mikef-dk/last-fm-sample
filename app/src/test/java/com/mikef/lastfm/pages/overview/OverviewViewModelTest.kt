@@ -3,7 +3,7 @@ package com.mikef.lastfm.pages.overview
 import com.google.common.truth.Truth.assertThat
 import com.mikef.lastfm.database.dao.AlbumDao
 import com.mikef.lastfm.extensions.InstantExecutorExtension
-import com.mikef.lastfm.getValueForTest
+import com.mikef.lastfm.extensions.getValueForTest
 import com.mikef.lastfm.pages.overview.adapter.AlbumCollectionDataManager
 import com.mikef.lastfm.pages.overview.adapter.OverviewDataManager
 import com.mikef.lastfm.shared.navigation.NavigationDelegate
@@ -11,6 +11,7 @@ import io.mockk.coEvery
 import io.mockk.mockk
 import io.mockk.verify
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.setMain
 import org.junit.jupiter.api.BeforeEach
@@ -20,6 +21,7 @@ import org.junit.jupiter.api.extension.ExtendWith
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 
+@ExperimentalCoroutinesApi
 @ExtendWith(InstantExecutorExtension::class)
 class OverviewViewModelTest {
 
@@ -40,7 +42,7 @@ class OverviewViewModelTest {
     inner class OnViewCreated {
 
         @ParameterizedTest(name = "Args passed -> input: {0}")
-        @MethodSource("com.mikef.lastfm.pages.main.MainViewModelTestInput#albumsInput()")
+        @MethodSource("com.mikef.lastfm.pages.overview.OverviewViewModelTestInput#albumsInput()")
         fun `ViewState with all saved albums is emitted`(input: OverviewViewModelTestInput.AlbumsInput) {
             coEvery { albumDao.getAlbums() } returns input.albums
 
@@ -58,7 +60,7 @@ class OverviewViewModelTest {
         inner class OnAlbumClicked {
 
             @ParameterizedTest(name = "Args passed -> artistName: {0}, albumName: {1}")
-            @MethodSource("com.mikef.lastfm.pages.main.MainViewModelTestInput#albumClickedInput()")
+            @MethodSource("com.mikef.lastfm.pages.overview.OverviewViewModelTestInput#albumClickedInput()")
             fun `Album info is opened with correct params`(artistName: String, albumName: String) {
                 viewModel.onAlbumClicked(navigationDelegate, artistName, albumName)
 

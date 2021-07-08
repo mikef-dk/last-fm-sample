@@ -1,10 +1,11 @@
 package com.mikef.lastfm.pages.search.adapter.delegates
 
-import coil.load
 import coil.transform.CircleCropTransformation
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
+import com.mikef.lastfm.R
 import com.mikef.lastfm.databinding.RowSearchResultBinding
 import com.mikef.lastfm.shared.adapter.AdapterData
+import com.mikef.lastfm.shared.loadImage
 
 object SearchResultDelegate {
 
@@ -27,7 +28,8 @@ object SearchResultDelegate {
 
             bind {
                 binding.apply {
-                    artistImage.load(item.artistImageUrl) {
+                    artistImage.loadImage(item.artistImageUrl) {
+                        placeholder(R.drawable.placeholder)
                         crossfade(true)
                         transformations(CircleCropTransformation())
                     }

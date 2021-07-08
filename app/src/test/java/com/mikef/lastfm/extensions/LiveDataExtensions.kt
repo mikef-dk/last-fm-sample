@@ -1,4 +1,4 @@
-package com.mikef.lastfm
+package com.mikef.lastfm.extensions
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
  */
 fun <T> LiveData<T>.getValueForTest(): T? {
     var value: T? = null
-    var observer = Observer<T> {
+    val observer = Observer<T> {
         value = it
     }
     observeForever(observer)

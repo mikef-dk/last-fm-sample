@@ -9,16 +9,16 @@ import com.mikef.lastfm.shared.resprovider.ResProvider
 
 class SearchDataManager(private val resProvider: ResProvider) : ResProvider by resProvider {
 
-    fun buildList(query: String, list: List<Artist>): List<AdapterData<*>> {
+    fun buildList(query: String? = null, list: List<Artist>? = null): List<AdapterData<*>> {
         return mutableListOf<AdapterData<*>>().apply {
-            if (list.isEmpty()) {
+            if (list?.isEmpty() == true && query != null) {
                 add(
                     NoSearchResultDelegate.NoSearchResultData(
                         text = getString(R.string.search_no_result, query)
                     )
                 )
             } else {
-                list.forEach { artist ->
+                list?.forEach { artist ->
                     add(
                         SearchResultDelegate.SearchResultData(
                             artistName = artist.name,

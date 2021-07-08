@@ -13,10 +13,10 @@
         android:background="?colorPrimary"
         android:elevation="@dimen/default_elevation_toolbar"
         android:scaleType="centerCrop"
+        android:src="@drawable/placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/believe_album" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/artist_name"

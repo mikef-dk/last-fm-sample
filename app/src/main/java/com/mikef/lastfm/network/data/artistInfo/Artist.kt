@@ -6,22 +6,14 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Artist(
-    @SerialName("bio")
-    val bio: Bio,
-    @SerialName("ontour")
-    val ontour: Int,
     @SerialName("stats")
     val stats: Stats,
     @SerialName("mbid")
     val mbid: String? = null,
     @SerialName("image")
     val image: List<Image>,
-    @SerialName("similar")
-    val similar: Similar,
     @SerialName("url")
     val url: String,
     @SerialName("name")
     val name: String,
-    @SerialName("streamable")
-    val streamable: String
 )
