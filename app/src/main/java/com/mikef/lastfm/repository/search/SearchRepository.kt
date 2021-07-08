@@ -1,7 +1,7 @@
-package com.mikef.lastfm.data.search
+package com.mikef.lastfm.repository.search
 
-import com.mikef.lastfm.data.RepoResult
 import com.mikef.lastfm.network.data.artist.ArtistSearchResult
+import com.mikef.lastfm.repository.RepoResult
 
 interface SearchRepository {
 

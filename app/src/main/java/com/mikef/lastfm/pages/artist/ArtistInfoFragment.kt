@@ -31,13 +31,19 @@ class ArtistInfoFragment : BaseFragment<FragmentArtistInfoBinding, ArtistInfoVie
 
     private fun initView() {
         binding.recyclerView.adapter = adapter
+        binding.back.setOnClickListener {
+            viewModel.onBackClicked(navigationDelegate)
+        }
 
         viewModel.viewState.observe(viewLifecycleOwner) {
             adapter.submitList(it.listData)
 
-            binding.artistName.text = it.artistName
-            binding.artistImage.load(it.artistUrl) {
-                crossfade(true)
+            binding.apply {
+                artistName.text = it.artistName
+                title.text = it.artistName
+                artistImage.load(it.artistUrl) {
+                    crossfade(true)
+                }
             }
         }
     }

@@ -1,7 +1,7 @@
-package com.mikef.lastfm.data.album
+package com.mikef.lastfm.repository.album
 
-import com.mikef.lastfm.data.RepoResult
 import com.mikef.lastfm.network.data.album.Album
+import com.mikef.lastfm.repository.RepoResult
 
 interface AlbumRepository {
 

@@ -1,11 +1,11 @@
 package com.mikef.lastfm.di
 
-import com.mikef.lastfm.data.album.AlbumRepository
-import com.mikef.lastfm.data.album.AlbumRepositoryImpl
-import com.mikef.lastfm.data.artist.ArtistRepository
-import com.mikef.lastfm.data.artist.ArtistRepositoryImpl
-import com.mikef.lastfm.data.search.SearchRepository
-import com.mikef.lastfm.data.search.SearchRepositoryImpl
+import com.mikef.lastfm.repository.album.AlbumRepository
+import com.mikef.lastfm.repository.album.AlbumRepositoryImpl
+import com.mikef.lastfm.repository.artist.ArtistRepository
+import com.mikef.lastfm.repository.artist.ArtistRepositoryImpl
+import com.mikef.lastfm.repository.search.SearchRepository
+import com.mikef.lastfm.repository.search.SearchRepositoryImpl
 import org.koin.dsl.module
 
 val repositoryModule = module {

@@ -1,4 +1,4 @@
-package com.mikef.lastfm.data.album
+package com.mikef.lastfm.repository.album
 
 import com.mikef.lastfm.network.data.album.AlbumResponse
 import retrofit2.http.GET

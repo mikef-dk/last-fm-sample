@@ -1,9 +1,9 @@
-package com.mikef.lastfm.data.album
+package com.mikef.lastfm.repository.album
 
 import com.mikef.lastfm.database.dao.AlbumDao
 import com.mikef.lastfm.database.entity.AlbumEntity
-import com.mikef.lastfm.data.RepoResult
 import com.mikef.lastfm.network.data.album.Album
+import com.mikef.lastfm.repository.RepoResult
 import timber.log.Timber
 
 class AlbumRepositoryImpl(
@@ -63,7 +63,7 @@ class AlbumRepositoryImpl(
                 )
             )
         } catch (e: Exception) {
-            Timber.e("Failure while fetching album: ${e.toString()}")
+            Timber.e("Failure while fetching album: $e")
             RepoResult.Failure(e)
         }
     }

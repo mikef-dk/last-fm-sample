@@ -1,4 +1,4 @@
-package com.mikef.lastfm.data
+package com.mikef.lastfm.repository
 
 sealed class RepoResult<T> {
 

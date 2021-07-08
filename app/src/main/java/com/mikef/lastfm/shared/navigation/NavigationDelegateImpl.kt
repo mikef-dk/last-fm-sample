@@ -38,4 +38,8 @@ class NavigationDelegateImpl(activity: Activity) : NavigationDelegate {
         )
     }
 
+    override fun goBack() {
+        navController.popBackStack()
+    }
+
 }

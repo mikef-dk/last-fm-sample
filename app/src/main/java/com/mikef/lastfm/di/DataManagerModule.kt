@@ -18,11 +18,11 @@ val dataManagerModule = module {
     }
 
     single {
-        SearchDataManager()
+        SearchDataManager(resProvider = get())
     }
 
     single {
-        ArtistInfoDataManager()
+        ArtistInfoDataManager(resProvider = get())
     }
 
     single {

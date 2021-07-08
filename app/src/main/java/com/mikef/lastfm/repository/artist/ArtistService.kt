@@ -1,4 +1,4 @@
-package com.mikef.lastfm.data.artist
+package com.mikef.lastfm.repository.artist
 
 import com.mikef.lastfm.network.data.artistAlbum.TopAlbumResponse
 import com.mikef.lastfm.network.data.artistInfo.ArtistInfoResponse

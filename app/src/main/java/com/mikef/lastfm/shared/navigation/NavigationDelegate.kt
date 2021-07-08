@@ -10,5 +10,6 @@ interface NavigationDelegate {
 
     fun navigateToAlbumInfo(artistName: String, albumName: String)
 
+    fun goBack()
 
 }

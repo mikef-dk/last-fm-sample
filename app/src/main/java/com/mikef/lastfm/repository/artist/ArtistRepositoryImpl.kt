@@ -1,21 +1,13 @@
-package com.mikef.lastfm.data.artist
+package com.mikef.lastfm.repository.artist
 
-import com.mikef.lastfm.data.RepoResult
 import com.mikef.lastfm.network.data.artistAlbum.TopAlbumResponse
 import com.mikef.lastfm.network.data.artistInfo.ArtistInfoResponse
+import com.mikef.lastfm.repository.RepoResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
 
 class ArtistRepositoryImpl(private val artistService: ArtistService) : ArtistRepository {
-
-    override suspend fun fetchInfo(artistName: String): ArtistInfoResponse {
-        return artistService.fetchInfo(artistName)
-    }
-
-    override suspend fun fetchTopAlbums(artistName: String): TopAlbumResponse {
-        return artistService.fetchTopAlbums(artistName)
-    }
 
     override suspend fun fetchArtistData(artistName: String): RepoResult<Pair<ArtistInfoResponse, TopAlbumResponse>> {
         return withContext(Dispatchers.IO) {
@@ -33,6 +25,14 @@ class ArtistRepositoryImpl(private val artistService: ArtistService) : ArtistRep
                 RepoResult.Failure(e)
             }
         }
+    }
+
+    private suspend fun fetchInfo(artistName: String): ArtistInfoResponse {
+        return artistService.fetchInfo(artistName)
+    }
+
+    private suspend fun fetchTopAlbums(artistName: String): TopAlbumResponse {
+        return artistService.fetchTopAlbums(artistName)
     }
 
 }

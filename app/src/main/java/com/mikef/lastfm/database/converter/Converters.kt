@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.mikef.lastfm.database.converter
 
 import androidx.room.TypeConverter

@@ -34,19 +34,26 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>(
     ///////////////////////////////////////////////////////////////////////////
 
     private fun initView() {
-        binding.recyclerView.adapter = adapter
-        observeData()
+        binding.apply {
+            recyclerView.adapter = adapter
 
-        binding.searchEditText.onQueryChanged()
-            .debounce(500)
-            .onEach {
-                viewModel.onSearchQueryChanged(it?.toString() ?: "")
+            searchEditText.onQueryChanged()
+                .debounce(500)
+                .onEach {
+                    viewModel.onSearchQueryChanged(it?.toString() ?: "")
+                }
+                .launchIn(viewLifecycleOwner.lifecycleScope)
+
+            back.setOnClickListener {
+                viewModel.onBackClicked(navigationDelegate)
             }
-            .launchIn(viewLifecycleOwner.lifecycleScope)
+        }
+
+        observeData()
     }
 
     private fun observeData() {
-        viewModel.listData.observe(viewLifecycleOwner) {
+        viewModel.viewState.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
     }

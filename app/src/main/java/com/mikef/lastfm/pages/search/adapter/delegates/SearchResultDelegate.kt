@@ -8,7 +8,7 @@ import com.mikef.lastfm.shared.adapter.AdapterData
 
 object SearchResultDelegate {
 
-    interface Listener{
+    interface Listener {
 
         fun onSearchResultClicked(artistName: String)
 
@@ -41,6 +41,10 @@ object SearchResultDelegate {
     data class SearchResultData(
         val artistImageUrl: String,
         val artistName: String
-    ) : AdapterData<SearchResultData>
+    ) : AdapterData<SearchResultData> {
+
+        override fun isItemTheSame(data: SearchResultData) = artistName == data.artistName
+
+    }
 
 }

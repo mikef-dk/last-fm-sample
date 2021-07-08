@@ -4,7 +4,6 @@ package com.mikef.lastfm.network.data.artist
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
-// TODO: Bring data models "together"
 @Serializable
 data class Artist(
     @SerialName("name")

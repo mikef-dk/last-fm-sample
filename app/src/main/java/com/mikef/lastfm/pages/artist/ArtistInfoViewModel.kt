@@ -1,13 +1,12 @@
 package com.mikef.lastfm.pages.artist
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mikef.lastfm.data.artist.ArtistRepository
-import com.mikef.lastfm.data.RepoResult
+import com.mikef.lastfm.R
 import com.mikef.lastfm.network.data.artistAlbum.TopAlbumResponse
 import com.mikef.lastfm.network.data.artistInfo.ArtistInfoResponse
+import com.mikef.lastfm.repository.RepoResult
+import com.mikef.lastfm.repository.artist.ArtistRepository
+import com.mikef.lastfm.shared.BaseViewModel
 import com.mikef.lastfm.shared.adapter.AdapterData
 import com.mikef.lastfm.shared.navigation.NavigationDelegate
 import kotlinx.coroutines.launch
@@ -15,13 +14,9 @@ import kotlinx.coroutines.launch
 class ArtistInfoViewModel(
     private val artistRepository: ArtistRepository,
     private val dataManager: ArtistInfoDataManager
-) : ViewModel() {
+) : BaseViewModel<ArtistInfoViewModel.ViewState>() {
 
     private lateinit var artistName: String
-
-    private val mutableViewState: MutableLiveData<ViewState> = MutableLiveData()
-    val viewState: LiveData<ViewState>
-        get() = mutableViewState
 
     fun onViewCreated(args: ArtistInfoFragmentArgs) {
         artistName = args.artistName
@@ -51,7 +46,7 @@ class ArtistInfoViewModel(
                     )
             }
             is RepoResult.Failure -> {
-                // TODO
+                mutableError.value = R.string.default_error
             }
         }
     }

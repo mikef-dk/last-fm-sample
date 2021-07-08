@@ -20,8 +20,6 @@ data class Artist(
     val similar: Similar,
     @SerialName("url")
     val url: String,
-    @SerialName("tags")
-    val tags: Tags,
     @SerialName("name")
     val name: String,
     @SerialName("streamable")

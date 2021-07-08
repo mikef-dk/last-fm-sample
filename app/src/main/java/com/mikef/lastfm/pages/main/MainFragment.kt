@@ -44,7 +44,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(
     }
 
     private fun observeData() {
-        viewModel.listData.observe(viewLifecycleOwner) {
+        viewModel.viewState.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
     }

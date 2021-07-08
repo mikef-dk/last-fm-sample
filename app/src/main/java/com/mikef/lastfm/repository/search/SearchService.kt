@@ -1,4 +1,4 @@
-package com.mikef.lastfm.data.search
+package com.mikef.lastfm.repository.search
 
 import com.mikef.lastfm.network.data.artist.ArtistSearchResult
 import retrofit2.http.GET

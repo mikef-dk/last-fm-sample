@@ -2,23 +2,20 @@ package com.mikef.lastfm.pages.album
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.mikef.lastfm.data.RepoResult
-import com.mikef.lastfm.data.album.AlbumRepository
-import com.mikef.lastfm.data.album.AlbumRepositoryImpl
+import com.mikef.lastfm.R
 import com.mikef.lastfm.network.data.album.Album
+import com.mikef.lastfm.repository.RepoResult
+import com.mikef.lastfm.repository.album.AlbumRepository
+import com.mikef.lastfm.repository.album.AlbumRepositoryImpl
+import com.mikef.lastfm.shared.BaseViewModel
 import com.mikef.lastfm.shared.adapter.AdapterData
 import kotlinx.coroutines.launch
 
 class AlbumInfoViewModel(
     private val albumRepository: AlbumRepository,
     private val dataManager: AlbumInfoDataManager
-) : ViewModel() {
-
-    private val mutableAlbumInfo: MutableLiveData<AlbumInfo> = MutableLiveData()
-    val albumInfo: LiveData<AlbumInfo>
-        get() = mutableAlbumInfo
+) : BaseViewModel<AlbumInfoViewModel.ViewState>() {
 
     private val mutableSavedState: MutableLiveData<Boolean> = MutableLiveData()
     val savedState: LiveData<Boolean>
@@ -27,7 +24,6 @@ class AlbumInfoViewModel(
     private var album: Album? = null
     private var saved = false
 
-    // TODO: Create BaseViewModel
     fun onViewCreated(args: AlbumInfoFragmentArgs) {
         viewModelScope.launch {
             handleResult(albumRepository.getAlbumInfo(args.artistName, args.albumName))
@@ -57,7 +53,7 @@ class AlbumInfoViewModel(
         when (result) {
             is RepoResult.Success -> {
                 val album = result.value.album
-                mutableAlbumInfo.value = AlbumInfo(
+                mutableViewState.value = ViewState(
                     albumName = album.name,
                     artistName = album.artist,
                     albumCoverUrl = album.image.last().text,
@@ -69,12 +65,12 @@ class AlbumInfoViewModel(
                 mutableSavedState.value = saved
             }
             is RepoResult.Failure -> {
-                // TODO
+                mutableError.value = R.string.default_error
             }
         }
     }
 
-    data class AlbumInfo(
+    data class ViewState(
         val albumName: String,
         val artistName: String,
         val albumCoverUrl: String,

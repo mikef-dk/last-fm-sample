@@ -37,13 +37,16 @@ class AlbumInfoFragment : BaseFragment<FragmentAlbumInfoBinding, AlbumInfoViewMo
                 viewModel.onAlbumSavedClicked()
             }
             recyclerView.adapter = adapter
+            toolbar.setNavigationOnClickListener {
+                viewModel.onBackClicked(navigationDelegate)
+            }
         }
 
         observeData()
     }
 
     private fun observeData() {
-        viewModel.albumInfo.observe(viewLifecycleOwner) {
+        viewModel.viewState.observe(viewLifecycleOwner) {
             binding.apply {
                 albumName.text = it.albumName
                 artistName.text = getString(R.string.album_info_artist_formatter, it.artistName)

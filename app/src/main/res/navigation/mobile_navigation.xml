@@ -7,7 +7,11 @@
 
     <action
         android:id="@+id/action_navigation_to_album_info"
-        app:destination="@id/album_info_fragment" />
+        app:destination="@id/album_info_fragment"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
 
     <fragment
         android:id="@+id/main_fragment"
@@ -17,7 +21,11 @@
 
         <action
             android:id="@+id/action_navigation_overview_to_search"
-            app:destination="@id/search_fragment" />
+            app:destination="@id/search_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
@@ -29,7 +37,11 @@
 
         <action
             android:id="@+id/action_navigation_search_to_artist_info"
-            app:destination="@id/artist_info_fragment" />
+            app:destination="@id/artist_info_fragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
