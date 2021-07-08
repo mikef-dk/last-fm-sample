@@ -1,4 +1,4 @@
-package com.mikef.lastfm.pages.main.adapter.delegates
+package com.mikef.lastfm.pages.overview.adapter.delegates
 
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.mikef.lastfm.databinding.RowTitleBinding

@@ -1,8 +1,8 @@
-package com.mikef.lastfm.pages.main.adapter.delegates
+package com.mikef.lastfm.pages.overview.adapter.delegates
 
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
 import com.mikef.lastfm.databinding.RowAlbumCollectionBinding
-import com.mikef.lastfm.pages.main.adapter.AlbumCollectionAdapter
+import com.mikef.lastfm.pages.overview.adapter.AlbumCollectionAdapter
 import com.mikef.lastfm.shared.adapter.AdapterData
 
 object AlbumCollectionDelegate {

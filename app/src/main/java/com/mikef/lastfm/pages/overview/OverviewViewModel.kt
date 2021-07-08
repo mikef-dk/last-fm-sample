@@ -1,15 +1,15 @@
-package com.mikef.lastfm.pages.main
+package com.mikef.lastfm.pages.overview
 
 import androidx.lifecycle.viewModelScope
 import com.mikef.lastfm.database.dao.AlbumDao
-import com.mikef.lastfm.pages.main.adapter.MainDataManager
+import com.mikef.lastfm.pages.overview.adapter.OverviewDataManager
 import com.mikef.lastfm.shared.BaseViewModel
 import com.mikef.lastfm.shared.adapter.AdapterData
 import com.mikef.lastfm.shared.navigation.NavigationDelegate
 import kotlinx.coroutines.launch
 
-class MainViewModel(
-    private val dataManager: MainDataManager,
+class OverviewViewModel(
+    private val dataManager: OverviewDataManager,
     private val albumDao: AlbumDao
 ) : BaseViewModel<List<AdapterData<*>>>() {
 

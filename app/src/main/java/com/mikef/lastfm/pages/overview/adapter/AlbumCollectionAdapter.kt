@@ -1,6 +1,6 @@
-package com.mikef.lastfm.pages.main.adapter
+package com.mikef.lastfm.pages.overview.adapter
 
-import com.mikef.lastfm.pages.main.adapter.delegates.AlbumDelegate
+import com.mikef.lastfm.pages.overview.adapter.delegates.AlbumDelegate
 import com.mikef.lastfm.shared.adapter.BaseDelegateAdapter
 
 class AlbumCollectionAdapter(listener: AlbumDelegate.Listener) : BaseDelegateAdapter() {

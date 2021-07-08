@@ -1,4 +1,4 @@
-package com.mikef.lastfm.pages.search
+package com.mikef.lastfm.pages.search.adapter
 
 import com.mikef.lastfm.R
 import com.mikef.lastfm.network.data.artist.Artist

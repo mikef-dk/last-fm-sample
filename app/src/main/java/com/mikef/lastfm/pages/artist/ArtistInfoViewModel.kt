@@ -4,6 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.mikef.lastfm.R
 import com.mikef.lastfm.network.data.artistAlbum.TopAlbumResponse
 import com.mikef.lastfm.network.data.artistInfo.ArtistInfoResponse
+import com.mikef.lastfm.pages.artist.adapter.ArtistInfoDataManager
 import com.mikef.lastfm.repository.RepoResult
 import com.mikef.lastfm.repository.artist.ArtistRepository
 import com.mikef.lastfm.shared.BaseViewModel

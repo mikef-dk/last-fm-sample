@@ -1,4 +1,4 @@
-package com.mikef.lastfm.pages.album
+package com.mikef.lastfm.pages.album.adapter
 
 import com.mikef.lastfm.network.data.album.Track
 import com.mikef.lastfm.pages.album.adapter.delegates.TrackDelegate

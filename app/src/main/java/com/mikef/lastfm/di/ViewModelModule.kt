@@ -4,8 +4,8 @@ import com.mikef.lastfm.pages.album.AlbumInfoFragment
 import com.mikef.lastfm.pages.album.AlbumInfoViewModel
 import com.mikef.lastfm.pages.artist.ArtistInfoFragment
 import com.mikef.lastfm.pages.artist.ArtistInfoViewModel
-import com.mikef.lastfm.pages.main.MainFragment
-import com.mikef.lastfm.pages.main.MainViewModel
+import com.mikef.lastfm.pages.overview.OverviewFragment
+import com.mikef.lastfm.pages.overview.OverviewViewModel
 import com.mikef.lastfm.pages.search.SearchFragment
 import com.mikef.lastfm.pages.search.SearchViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -14,9 +14,9 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
 
-    scope(named<MainFragment>()) {
+    scope(named<OverviewFragment>()) {
         viewModel {
-            MainViewModel(
+            OverviewViewModel(
                 dataManager = get(),
                 albumDao = get()
             )

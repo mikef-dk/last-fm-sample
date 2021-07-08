@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     id("kotlinx-serialization")
     id("androidx.navigation.safeargs.kotlin")
+    id("de.mannodermaus.android-junit5")
     kotlin("kapt")
 }
 
@@ -87,13 +88,20 @@ dependencies {
     implementation("com.jakewharton.timber:timber:4.7.1")
     implementation("io.coil-kt:coil:1.2.2")
 
-    // Debug dependencies
+    // Debug
     debugImplementation("com.facebook.flipper:flipper:0.96.1")
     releaseImplementation("com.facebook.flipper:flipper-noop:0.96.1")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:0.96.1")
     debugImplementation("com.facebook.soloader:soloader:0.10.1")
 
-    testImplementation("junit:junit:4.+")
+    // Test
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.7.1")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:5.7.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.7.1")
+    testImplementation("io.mockk:mockk:1.11.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.0")
+    testImplementation("com.google.truth:truth:1.1.2")
+
     androidTestImplementation("androidx.test.ext:junit:1.1.2")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
 }

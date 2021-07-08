@@ -3,6 +3,7 @@ package com.mikef.lastfm.pages.search
 import androidx.lifecycle.viewModelScope
 import com.mikef.lastfm.R
 import com.mikef.lastfm.network.data.artist.ArtistSearchResult
+import com.mikef.lastfm.pages.search.adapter.SearchDataManager
 import com.mikef.lastfm.repository.RepoResult
 import com.mikef.lastfm.repository.search.SearchRepository
 import com.mikef.lastfm.shared.BaseViewModel

@@ -1,9 +1,9 @@
-package com.mikef.lastfm.pages.artist
+package com.mikef.lastfm.pages.artist.adapter
 
 import com.mikef.lastfm.R
 import com.mikef.lastfm.network.data.artistAlbum.ArtistAlbum
 import com.mikef.lastfm.pages.artist.adapter.delegates.ArtistAlbumDelegate
-import com.mikef.lastfm.pages.main.adapter.delegates.TitleDelegate
+import com.mikef.lastfm.pages.overview.adapter.delegates.TitleDelegate
 import com.mikef.lastfm.shared.adapter.AdapterData
 import com.mikef.lastfm.shared.resprovider.ResProvider
 

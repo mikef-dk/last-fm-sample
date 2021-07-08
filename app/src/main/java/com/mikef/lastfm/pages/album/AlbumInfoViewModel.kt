@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.mikef.lastfm.R
 import com.mikef.lastfm.network.data.album.Album
+import com.mikef.lastfm.pages.album.adapter.AlbumInfoDataManager
 import com.mikef.lastfm.repository.RepoResult
 import com.mikef.lastfm.repository.album.AlbumRepository
 import com.mikef.lastfm.repository.album.AlbumRepositoryImpl
@@ -56,7 +57,7 @@ class AlbumInfoViewModel(
                 mutableViewState.value = ViewState(
                     albumName = album.name,
                     artistName = album.artist,
-                    albumCoverUrl = album.image.last().text,
+                    albumCoverUrl = album.image.lastOrNull()?.text,
                     listData = dataManager.buildList(album.tracks?.track)
                 )
 
@@ -73,7 +74,7 @@ class AlbumInfoViewModel(
     data class ViewState(
         val albumName: String,
         val artistName: String,
-        val albumCoverUrl: String,
+        val albumCoverUrl: String?,
         val listData: List<AdapterData<*>>
     )
 

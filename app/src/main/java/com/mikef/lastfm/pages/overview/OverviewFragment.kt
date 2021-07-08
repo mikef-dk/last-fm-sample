@@ -1,23 +1,23 @@
-package com.mikef.lastfm.pages.main
+package com.mikef.lastfm.pages.overview
 
 import android.os.Bundle
 import android.view.View
 import com.mikef.lastfm.databinding.FragmentMainBinding
-import com.mikef.lastfm.pages.main.adapter.MainAdapter
-import com.mikef.lastfm.pages.main.adapter.delegates.AlbumDelegate
+import com.mikef.lastfm.pages.overview.adapter.OverviewAdapter
+import com.mikef.lastfm.pages.overview.adapter.delegates.AlbumDelegate
 import com.mikef.lastfm.shared.BaseFragment
 import com.mikef.lastfm.shared.disableChangeAnimation
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(
+class OverviewFragment : BaseFragment<FragmentMainBinding, OverviewViewModel>(
     FragmentMainBinding::inflate
 ), AlbumDelegate.Listener {
 
     private val adapter by lazy {
-        MainAdapter(this)
+        OverviewAdapter(this)
     }
 
-    override val viewModel: MainViewModel by viewModel()
+    override val viewModel: OverviewViewModel by viewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

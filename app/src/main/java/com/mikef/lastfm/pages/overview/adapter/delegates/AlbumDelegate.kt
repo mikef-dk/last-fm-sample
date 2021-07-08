@@ -1,4 +1,4 @@
-package com.mikef.lastfm.pages.main.adapter.delegates
+package com.mikef.lastfm.pages.overview.adapter.delegates
 
 import coil.load
 import coil.transform.RoundedCornersTransformation
@@ -39,7 +39,7 @@ object AlbumDelegate {
         }
 
     data class AlbumData(
-        val imageUrl: String,
+        val imageUrl: String?,
         val albumName: String,
         val artist: String
     ) : AdapterData<AlbumData> {
